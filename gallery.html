@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./css/bulma.css">
   <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
+
+  <script type="text/javascript">
+      function openMobileMenu() {
+        if (document.getElementById("mobile-nav-t").className == "nav-toggle") {
+          document.getElementById("mobile-nav-t").className = "nav-toggle is-active";
+          document.getElementById("mobile-nav-m").className = "nav-right nav-menu is-active";
+        }
+        else {
+          document.getElementById("mobile-nav-t").className = "nav-toggle";
+          document.getElementById("mobile-nav-m").className = "nav-right nav-menu";
+        }
+      }
+      function useless() {
+        document.getElementById("useless").className = "button is-large is-loading";
+      }
+  </script>
 </head>
 <body>
   <section class="hero is-default is-bold">
