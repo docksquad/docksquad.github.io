@@ -6,9 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DOCK SQUAD</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" id="bulma" href="./css/bulma.css" />
-  <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
-
+  <link rel="stylesheet" id="bulma" href="../css/bulma.css" />
+  <link rel="stylesheet" href="../css/lux.css">
+  <style type="text/css">
+    .header-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.50)),url(../img/pages.jpg);
+      background-repeat: no-repeat;
+      background-size:cover;
+      color: #fff;
+    }   
+  </style>
 	<script type="text/javascript">
 	    function openMobileMenu() {
 	      if (document.getElementById("mobile-nav-t").className == "nav-toggle") {
@@ -29,7 +36,7 @@
 <body>
   <section class="hero is-default is-bold">
     <div class="hero-head">
-      <nav class="nav has-shadow">
+      <nav class="nav">
         <div class="container">
           <div class="nav-left">
             <a class="nav-item" href="/">
@@ -66,7 +73,7 @@
       </nav>
     </div>
   </section>
-  <section class="hero is-medium is-info is-bold">
+  <section class="hero is-medium is-primary header-image">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
