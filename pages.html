@@ -1,132 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DOCK SQUAD</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" id="bulma" href="./css/bulma.css" />
-  <link rel="stylesheet" href="./css/lux.css">
-  <style type="text/css">
-    .header-image {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.50)),url(./img/pages.jpg);
-      background-repeat: no-repeat;
-      background-size:cover;
-      color: #fff;
-    }   
-  </style>
-	<script type="text/javascript">
-	    function openMobileMenu() {
-	      if (document.getElementById("mobile-nav-t").className == "nav-toggle") {
-	        document.getElementById("mobile-nav-t").className = "nav-toggle is-active";
-	        document.getElementById("mobile-nav-m").className = "nav-right nav-menu is-active";
-	      }
-	      else {
-	        document.getElementById("mobile-nav-t").className = "nav-toggle";
-	        document.getElementById("mobile-nav-m").className = "nav-right nav-menu";
-	      }
-	    }
-	    function useless() {
-	    	document.getElementById("useless").className = "button is-large is-loading";
-	    }
-	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOCK SQUAD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" id="bulma" href="./css/bulma.css" />
+    <link rel="stylesheet" href="./css/lux.css">
+    <style type="text/css">
+        .header-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(./img/pages.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+        function openMobileMenu() {
+            if (document.getElementById("mobile-nav-t").className == "nav-toggle") {
+                document.getElementById("mobile-nav-t").className = "nav-toggle is-active";
+                document.getElementById("mobile-nav-m").className = "nav-right nav-menu is-active";
+            } else {
+                document.getElementById("mobile-nav-t").className = "nav-toggle";
+                document.getElementById("mobile-nav-m").className = "nav-right nav-menu";
+            }
+        }
 
+        function useless() {
+            document.getElementById("useless").className = "button is-large is-loading";
+        }
+    </script>
 </head>
+
 <body>
-  <section class="hero is-default is-bold">
-    <div class="hero-head">
-      <nav class="nav">
-        <div class="container">
-          <div class="nav-left">
-            <a class="nav-item" href="/">
-              <!-- <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"> -->
-              DOCK SQUAD
-            </a>
-          </div>
-          <span id="mobile-nav-t" class="nav-toggle" onclick="openMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <div id="mobile-nav-m" class="nav-right nav-menu">
-            <a class="nav-item is-tab is-hidden-mobile" href="/">Home</a>
-            <a class="nav-item is-tab is-hidden-mobile  is-active" href="/pages">Pages</a>
-            <a class="nav-item is-tab is-hidden-mobile" href="/about">About</a>
+    <section class="hero is-default is-bold">
+        <div class="hero-head">
+            <nav class="nav">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item" href="/">
+                            DOCK SQUAD
+                        </a>
+                    </div>
+                    <span id="mobile-nav-t" class="nav-toggle" onclick="openMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                    <div id="mobile-nav-m" class="nav-right nav-menu">
+                        <a class="nav-item is-tab is-hidden-mobile" href="/">Home</a>
+                        <a class="nav-item is-tab is-hidden-mobile  is-active" href="/pages">Pages</a>
+                        <a class="nav-item is-tab is-hidden-mobile" href="/about">About</a>
 
-            <a class="nav-item is-hidden-tablet" href="/">Home</a>
-            <a class="nav-item is-hidden-tablet" href="/pages">Pages</a>
-            <a class="nav-item is-hidden-tablet" href="/about">About</a>
+                        <a class="nav-item is-hidden-tablet" href="/">Home</a>
+                        <a class="nav-item is-hidden-tablet" href="/pages">Pages</a>
+                        <a class="nav-item is-hidden-tablet" href="/about">About</a>
 
-            <span class="nav-item">
-                      <a class="button is-primary is-inverted" href="https://discord.gg/A4rfu5z">
-                        <span>Discord</span>
-                      </a>
-                </span>
-                <span class="nav-item"  >
-                      <a class="button is-primary is-inverted" href="https://twitter.com/dickspang">
-                        <span>Twitter</span>
-                      </a>
-                </span>
-          </div>
+                        <span class="nav-item">
+                          <a class="button is-primary is-inverted" href="https://discord.gg/A4rfu5z">
+                            <span>Discord</span>
+                          </a>
+                        </span>
+                        <span class="nav-item">
+                          <a class="button is-primary is-inverted" href="https://twitter.com/dickspang">
+                            <span>Twitter</span>
+                          </a>
+                        </span>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </nav>
-    </div>
-  </section>
-  <section class="hero is-medium is-primary header-image">
-      <div class="hero-body">
+    </section>
+    <section class="hero is-medium is-primary header-image">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">ページ</h1>
+                <h2 class="subtitle">pages</h2>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-centered is-boxed">
+                <div class="container">
+                    <ul>
+                        <li class="is-active"><a>Main</a></li>
+                        <li><a href="/pages/legacy">Legacy</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="section">
         <div class="container">
-          <h1 class="title">
-            ページ
-          </h1>
-          <h2 class="subtitle">
-            pages
-          </h2>
-        </div>
-      </div>
-      <div class="hero-foot">
-        <nav class="tabs is-centered is-boxed">
-          <div class="container">
-            <ul>
-              <li class="is-active"><a>Main</a></li>
-              <li><a href="/pages/legacy">Legacy</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Main</h1>
-      <h2 class="subtitle">main pages to the site</h2>
-      <hr>
-      <div class="columns">
-        <div class="column">
-          <a href="gallery">
-            <div class="card">
-              <header class="card-header">
-                <p class="card-header-title">Gallery</p>
-              </header>
-              <div class="card-content">
-                <div class="content">Dock Squad-related images are here</div>
-              </div>
+            <h1 class="title">Main</h1>
+            <h2 class="subtitle">main pages to the site</h2>
+            <hr>
+            <div class="columns">
+                <div class="column">
+                    <a href="gallery">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">Gallery</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">Dock Squad-related images are here</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="plat">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">Plat</p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">Fake McDonalds platnium card website to get discounts</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
         </div>
-        <div class="column">
-          <a href="plat">
-            <div class="card">
-              <header class="card-header">
-                <p class="card-header-title">Plat</p>
-              </header>
-              <div class="card-content">
-                <div class="content">Fake McDonalds platnium card website to get discounts</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </body>
 </html>

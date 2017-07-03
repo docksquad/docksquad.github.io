@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>koala</title>
-        <link rel="shortcut icon" href="http://33.media.tumblr.com/avatar_92a51a1b2767_128.png">
-        <link rel="apple-touch-icon" href="http://33.media.tumblr.com/avatar_92a51a1b2767_128.png">
-        <style type="text/css">
-            iframe {
-                display: none !important;
-            }
-                
-            button {
-                height:375px;
-                width:500px;
-                background: url('./img/koala.jpg');
-                background-position: center;
-                background-size: 100%; 
-                background-repeat: no-repeat;
-                border: none;
-                cursor: pointer; 
-                cursor: hand;
-            }
-            #content {
-                width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-                height: 500px;
-            }
+<head>
+    <title>koala</title>
+    <link rel="shortcut icon" href="http://33.media.tumblr.com/avatar_92a51a1b2767_128.png">
+    <link rel="apple-touch-icon" href="http://33.media.tumblr.com/avatar_92a51a1b2767_128.png">
+    <style type="text/css">
+        iframe {
+            display: none !important;
+        }
+        
+        button {
+            height: 375px;
+            width: 500px;
+            background: url('./img/koala.jpg');
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            cursor: hand;
+        }
+        
+        #content {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 500px;
+        }
+        
+        #container {
+            position: absolute;
+            top: 50%;
+            margin-top: -188px;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
 
-            #container {
-                position: absolute;
-                top: 50%;
-                margin-top: -188px;
-                left: 0;
-                width: 100%;
-            }
-        </style>
-    </head>
+<audio id="sound1" src="./snd/stewie.mp3"></audio>
+<audio id="sound2" src="./snd/pushed.mp3"></audio>
+<audio id="sound3" src="./snd/whitebox.mp3"></audio>
+<audio id="sound4" src="./snd/behind.mp3"></audio>
+<audio id="sound5" src="./snd/naded.mp3"></audio>
+<audio id="sound6" src="./snd/gg.mp3"></audio>
+<audio id="sound7" src="./snd/gushed.mp3"></audio>
+<audio id="sound8" src="./snd/never.mp3"></audio>
+<audio id="sound9" src="./snd/pushed2.mp3"></audio>
+<audio id="sound10" src="./snd/raped.mp3"></audio>
+<audio id="sound11" src="./snd/toxic.mp3"></audio>
 
-    <audio id="sound1" src="./snd/stewie.mp3"></audio> 
-    <audio id="sound2" src="./snd/pushed.mp3"></audio>
-    <audio id="sound3" src="./snd/whitebox.mp3"></audio>
-    <audio id="sound4" src="./snd/behind.mp3"></audio>
-    <audio id="sound5" src="./snd/naded.mp3"></audio>
-    <audio id="sound6" src="./snd/gg.mp3"></audio>
-    <audio id="sound7" src="./snd/gushed.mp3"></audio>
-    <audio id="sound8" src="./snd/never.mp3"></audio>
-    <audio id="sound9" src="./snd/pushed2.mp3"></audio>
-    <audio id="sound10" src="./snd/raped.mp3"></audio>
-    <audio id="sound11" src="./snd/toxic.mp3"></audio>
-    <div id="container"> 
-        <div id="content"> 
+<body>
+    <div id="container">
+        <div id="content">
             <button onclick="document.getElementById('sound'+(Math.floor(Math.random() * 11) + 1)).play()"></button>
-        </div> 
-    </div> 
+        </div>
+    </div>
+</body>
 </html>
