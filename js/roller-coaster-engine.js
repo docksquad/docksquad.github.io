@@ -56,7 +56,7 @@ $(document).ready(function() {
             $('#change-value').html(signal + Math.abs((change)).toFixed(2));
             $('#change-percentage').html(signal + Math.abs((((currentMoon / oldEarth) - 1) * 100)).toFixed(2) + "%");
 
-            document.title = '(' + currentMoon + ')' + " Bitcoin Roller Coaster Guy";
+            document.title = currentMoon;
             feeRequest();
         }
     }
@@ -89,9 +89,9 @@ $(document).ready(function() {
 
     function animateMoonElem(mooningElem) {
         // it must have pulse class
-        mooningElem.addClass("flash");
+        mooningElem.addClass("animated flash");
         setTimeout(function() {
-            mooningElem.removeClass("flash")
+            mooningElem.removeClass("animated flash")
         }, 1000);
     }
 
@@ -187,7 +187,7 @@ $(document).ready(function() {
         var fastestAvgFee = data.fastestFee;
         var fastestAvgFeePerTx = ((fastestAvgFee * 226) / 100000000) * currentMoon;
         $('#fastest-avg-fee').html("~" + fastestAvgFee + " sat/B");
-        $('#fastest-avg-fee-fiat').html("$ " + Number(fastestAvgFeePerTx).toFixed(3));
+        $('#fastest-avg-fee-fiat').html("$" + Number(fastestAvgFeePerTx).toFixed(3));
 
     }
 
