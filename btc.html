@@ -119,6 +119,7 @@
         body{
             font-family: "SF Display";
         }
+
         #price {
             background: #000;
         }
@@ -135,7 +136,11 @@
             cursor: pointer;
             letter-spacing: -.015em;
             font-weight: 600;
-            font-size: 19px;
+            font-size: 20px;
+        }
+
+        .title {
+            margin-bottom: 1rem !important;
         }
 
         .button.is-primary.is-outlined {
@@ -168,21 +173,29 @@
         }
 
         @media only screen and (max-width: 1068px) {
+            .title {
+                margin-bottom: 0.8rem !important;
+            }
+
             #price .title span {
                 font-size: 64px;
             }
 
             #price .subtitle span {
-                font-size: 14px;
+                font-size: 16px;
         }
 
         @media only screen and (max-width: 735px) {
+            .title {
+                margin-bottom: 0.64rem !important;
+            }
+
             #price .title span {
                 font-size: 48px;
             }
 
             #price .subtitle span {
-                font-size: 12px;
+                font-size: 12.8px;
         }
     </style>
 </head>
