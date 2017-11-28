@@ -8,7 +8,6 @@
     <link rel="stylesheet" id="bulma" href="./css/bulma.css">
     <link rel="stylesheet" id="bulma" href="./css/lux.css">
     <link rel="stylesheet" id="bulma" href="./css/animate.css">
-    <link rel="stylesheet" id="bulma" href="./css/sanfrancisco-font.css">
     
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="./js/markets.js"></script>
@@ -16,11 +15,25 @@
     <script type="text/javascript">
         function openFees()
         {
-            document.getElementById("fees-modal").className += " is-active";
+            document.getElementById("fees-modal").className = "modal is-active animated fadeIn";
         }
         function closeFees()
         {
-            document.getElementById("fees-modal").className = "modal";
+            document.getElementById("fees-modal").className = "modal is-active animated fadeOut";
+            setTimeout(function() {
+               document.getElementById("fees-modal").className = "modal";
+            }, 1000);
+        }
+        function openButtons()
+        {
+            document.getElementById("buttons-modal").className = "modal is-active animated fadeIn";
+        }
+        function closeButtons()
+        {
+            document.getElementById("buttons-modal").className = "modal is-active animated fadeOut";
+            setTimeout(function() {
+               document.getElementById("buttons-modal").className = "modal";
+            }, 1000);
         }
     </script>
     </script>
@@ -92,21 +105,37 @@
           font-weight: 100;
           src: url("./fonts/SF-UI-Display-Ultralight.otf");
         }
+
+        ::-moz-selection { /* Code for Firefox */
+            color: #000;
+            background: #fff;
+        }
+
+        ::selection {
+            color: #000;
+            background: #fff;
+}
+
         body{
-            letter-spacing: -.015em;
             font-family: "SF Display";
         }
         #price {
             background: #000;
         }
 
-        #price .title span{
+        #price .title span {
+            cursor: pointer;
+            letter-spacing: -.015em;
             font-size: 80px;
             font-weight: 600;
         }
 
         #price .subtitle span {
-            font-weight: 500;
+            margin: 0 4px 0 4px;
+            cursor: pointer;
+            letter-spacing: -.015em;
+            font-weight: 600;
+            font-size: 19px;
         }
 
         .button.is-primary.is-outlined {
@@ -114,18 +143,46 @@
             border-color: #fff;
             color: #fff;
             width: 120px;
-            margin-left: 4px;
-            margin-right: 4px;
         }
 
-        .button.is-primary.is-outlined:focus, .button.is-primary.is-outlined:hover {
+        .button.is-primary.is-outlined:hover {
             background-color: #fff;
             border-color: #fff;
             color: #000 !important;
         }
 
+        .modal-content {
+            width: 120px;
+        }
+
         .content {
             font-size: 16px;
+            color: #000;
+        }
+        .feetitle {
+            font-weight: 600;
+        }
+
+        .modal-background {
+            background-color: hsla(0, 0%, 0%, .86);
+        }
+
+        @media only screen and (max-width: 1068px) {
+            #price .title span {
+                font-size: 64px;
+            }
+
+            #price .subtitle span {
+                font-size: 14px;
+        }
+
+        @media only screen and (max-width: 735px) {
+            #price .title span {
+                font-size: 48px;
+            }
+
+            #price .subtitle span {
+                font-size: 12px;
         }
     </style>
 </head>
@@ -136,14 +193,19 @@
             <div class="container has-text-centered">
                 <div class="columns is-vcentered">
                     <div class="column">
-                        <h1 class="title animated"><span id="current-moon"></span></h1>
-                        <h2 class="subtitle animated"><span id="change-value"></span>
+                        <h1 class="title"><span id="current-moon" onclick="openButtons()"></span></h1>
+                        <h2 class="subtitle"><span id="change-value" onclick="openButtons()"></span>
                         <span id="change-percentage"></span></h2>
-                        <a class="button is-primary is-outlined market-ticker active" id="0">CAD</a>
-                        <a class="button is-primary is-outlined market-ticker" id="1">USD</a>
-                        <a class="button is-primary is-outlined market-ticker active" id="fees" onclick="openFees()"><span>fees</span></a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="modal" id="buttons-modal">
+            <div class="modal-background"><button onclick="closeButtons()" style="width: 100%; height: 100%; opacity: 0;"></div>
+            <div class="modal-content has-text-centered">
+                <a class="button is-primary is-outlined market-ticker" id="0">CAD</a><br><br>
+                <a class="button is-primary is-outlined market-ticker" id="1">USD</a><br><br>
+                <a class="button is-primary is-outlined market-ticker" id="fees" onclick="openFees()"><span>fees</span></a>
             </div>
         </div>
         <div class="modal" id="fees-modal">
@@ -153,12 +215,14 @@
                     <div class="card-content">
                         <div class="content">
                             <div class="row text-center">
-                                <a target="_blank" href="https://bitcoinfees.21.co/">CHEAPEST AND FASTEST FEE PER BYTE
-                                <span id="fastest-avg-fee" class="label label-success"></span></a><br>
-                                <a>COST FOR A MEDIAN TX SIZE OF 226 BYTES
-                                <span id="fastest-avg-fee-fiat" class="label label-success"></span></a><br>
-                                <a target="_blank" href="https://blockchain.info/unconfirmed-transactions">UNCONFIRMED TRANSACTIONS
-                                <span id="tx-count" class="label label-success"></span></a>
+                                <a class="feetitle" target="_blank" href="https://bitcoinfees.21.co/">CHEAPEST AND FASTEST FEE PER BYTE</a>
+                                <br><a target="_blank" href="https://bitcoinfees.21.co/"><span id="fastest-avg-fee"></span></a>
+                                <br><br>
+                                <a class="feetitle" target="_blank" href="https://bitcoinfees.21.co/">COST FOR A MEDIAN TX SIZE OF 226 BYTES</a>
+                                <br><a target="_blank" href="https://bitcoinfees.21.co/"><span id="fastest-avg-fee-fiat"></span></a>
+                                <br><br>
+                                <a class="feetitle" target="_blank" href="https://blockchain.info/unconfirmed-transactions">UNCONFIRMED TRANSACTIONS</a>
+                                <br><a target="_blank" href="https://blockchain.info/unconfirmed-transactions"><span id="tx-count"></span></a>
                             </div>
                         </div>
                     </div>

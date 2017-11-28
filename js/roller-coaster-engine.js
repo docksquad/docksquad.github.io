@@ -35,10 +35,10 @@ $(document).ready(function() {
 
     function mooningFunction(open, close, id) {
         updateCurrentMoon(open, close);
-        updateStatus(open, close);
-        updateLabels(open, close);
+        // updateStatus(open, close);
+        // updateLabels(open, close);
         updateTicker(open, close, id);
-        updateHodlings(close);
+        // updateHodlings(close);
     }
 
     function updateCurrentMoon(open, close) {
@@ -49,14 +49,16 @@ $(document).ready(function() {
 
             var change = currentMoon - oldEarth;
 
-            $('#current-moon').html('$' + currentMoon);
+            $('#current-moon').html('$' + currentMoon.toFixed(2));
             animateMoonElem($('#current-moon'));
 
             var signal = change >= 0 ? '+' : '-';
             $('#change-value').html(signal + Math.abs((change)).toFixed(2));
             $('#change-percentage').html(signal + Math.abs((((currentMoon / oldEarth) - 1) * 100)).toFixed(2) + "%");
+            animateMoonElem($('#change-value'));
+            animateMoonElem($('#change-percentage'));
 
-            document.title = currentMoon;
+            document.title = '$' + currentMoon.toFixed(2);
             feeRequest();
         }
     }
