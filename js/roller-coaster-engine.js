@@ -35,7 +35,7 @@ $(document).ready(function() {
 
     function mooningFunction(open, close, id) {
         updateCurrentMoon(open, close);
-        // updateStatus(open, close);
+        //updateStatus(open, close);
         // updateLabels(open, close);
         updateTicker(open, close, id);
         // updateHodlings(close);
@@ -104,15 +104,15 @@ $(document).ready(function() {
         var changeAbs = Math.abs((currentMoon / oldEarth) - 1).toFixed(3);
         var changeTreshold = 0.008;
         
-        //$('body').css('background-image', 'url(images/what-if-its-a-space-rollercoaster.jpg');
-        // if(close>=9000){
-        //     $('body').css('background-image', 'url(images/over9000.gif');
-        //     $("#roller-coaster-guy").attr("src", "images/roller-coaster-guy.gif");
-        //     rollerCoasterStatus = "IT'S OVER 9000!!!!";
-        //     rotateTheGuy(0);
-        //     $('#change-value').html("+9000");
-        //     $('#change-percentage').html("Infinity%");
-        // }
+        $('body').css('background-image', 'url(images/what-if-its-a-space-rollercoaster.jpg');
+        if(close>=9000){
+            $('body').css('background-image', 'url(images/over9000.gif');
+            $("#roller-coaster-guy").attr("src", "images/roller-coaster-guy.gif");
+            rollerCoasterStatus = "IT'S OVER 9000!!!!";
+            rotateTheGuy(0);
+            $('#change-value').html("+9000");
+            $('#change-percentage').html("Infinity%");
+        }
         if (changeAbs >= changeTreshold) {
             $("#roller-coaster-guy").attr("src", "images/roller-coaster-guy.gif");
             rotateTheGuy(90 - (angle)); //  +90 degrees 'cause de upwards gif
