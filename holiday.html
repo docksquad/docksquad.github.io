@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOCK SQUAD</title>
+    <link rel="stylesheet" id="bulma" href="./css/bulma.css">
+    <link rel="stylesheet" id="bulma" href="./css/lux.css">
+    <link rel="stylesheet" id="bulma" href="./css/animate.css">
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./js/countdown.js"></script>
+    </script>
+    
+    <style>
+        /*---------------------------------------------------------------------------*
+         * SF UI Display
+         *---------------------------------------------------------------------------*/
+
+        /** Black */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 900;
+          src: url("./fonts/SF-UI-Display-Black.otf");
+        }
+
+        /** Bold */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 700;
+          src: url("./fonts/SF-UI-Display-Bold.otf");
+        }
+
+        /** Heavy */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 800;
+          src: url("./fonts/SF-UI-Display-Heavy.otf");
+        }
+
+        /** Light */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 200;
+          src: url("./fonts/SF-UI-Display-Light.otf");
+        }
+
+        /** Medium */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 500;
+          src: url("./fonts/SF-UI-Display-Medium.otf");
+        }
+
+        /** Regular */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 400;
+          src: url("./fonts/SF-UI-Display-Regular.otf");
+        }
+
+        /** Semibold */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 600;
+          src: url("./fonts/SF-UI-Display-Semibold.otf");
+        }
+
+        /** Thin */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 300;
+          src: url("./fonts/SF-UI-Display-Thin.otf");
+        }
+
+        /** Ultralight */
+        @font-face {
+          font-family: "SF Display";
+          font-weight: 100;
+          src: url("./fonts/SF-UI-Display-Ultralight.otf");
+        }
+
+        ::-moz-selection { /* Code for Firefox */
+            color: #000;
+            background: #fff;
+        }
+
+        ::selection {
+            color: #000;
+            background: #fff;
+        }
+
+        body{
+            font-family: "SF Display";
+            background-size: auto 100%;
+            background-image: url(./img/holiday/1.png);
+        }
+
+        #price {
+            background-color: hsla(0, 0%, 0%, .75)
+        }
+
+        #price .title span {
+            cursor: pointer;
+            letter-spacing: -.015em;
+            font-size: 80px;
+            font-weight: 600;
+        }
+
+        #price .subtitle span {
+            margin: 0 4px 0 4px;
+            cursor: pointer;
+            letter-spacing: -.015em;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .title {
+            margin-bottom: 1.2rem !important;
+        }
+
+        @media only screen and (max-width: 1068px) {
+            .title {
+                margin-bottom: 1rem !important;
+            }
+
+            #price .title span {
+                font-size: 64px;
+            }
+
+            #price .subtitle span {
+                font-size: 16px;
+        }
+
+        @media only screen and (max-width: 735px) {
+            .title {
+                margin-bottom: 0.8rem !important;
+            }
+
+            #price .title span {
+                font-size: 48px;
+            }
+
+            #price .subtitle span {
+                font-size: 12.8px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight is-primary" id="price">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column">
+                        <h1 class="title"><span id="clockdiv" onclick="openButtons()"></span></h1>
+                        <h2 class="subtitle"><span>UNTIL CHRISTMAS</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
