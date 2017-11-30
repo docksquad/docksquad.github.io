@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var deadline = '2017-12-25';
+	var deadline = 'December 25 2017 00:00:00 GMT-0800';
 
 	function getTimeRemaining(endtime){
 	  var t = Date.parse(endtime) - Date.parse(new Date());
