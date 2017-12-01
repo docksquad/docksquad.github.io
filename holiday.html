@@ -14,71 +14,11 @@
     </script>
     
     <style>
-        /*---------------------------------------------------------------------------*
-         * SF UI Display
-         *---------------------------------------------------------------------------*/
-
-        /** Black */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 900;
-          src: url("./fonts/SF-UI-Display-Black.otf");
-        }
-
-        /** Bold */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 700;
-          src: url("./fonts/SF-UI-Display-Bold.otf");
-        }
-
-        /** Heavy */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 800;
-          src: url("./fonts/SF-UI-Display-Heavy.otf");
-        }
-
-        /** Light */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 200;
-          src: url("./fonts/SF-UI-Display-Light.otf");
-        }
-
-        /** Medium */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 500;
-          src: url("./fonts/SF-UI-Display-Medium.otf");
-        }
-
-        /** Regular */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 400;
-          src: url("./fonts/SF-UI-Display-Regular.otf");
-        }
-
         /** Semibold */
         @font-face {
           font-family: "SF Display";
           font-weight: 600;
           src: url("./fonts/SF-UI-Display-Semibold.otf");
-        }
-
-        /** Thin */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 300;
-          src: url("./fonts/SF-UI-Display-Thin.otf");
-        }
-
-        /** Ultralight */
-        @font-face {
-          font-family: "SF Display";
-          font-weight: 100;
-          src: url("./fonts/SF-UI-Display-Ultralight.otf");
         }
 
         ::-moz-selection { /* Code for Firefox */
@@ -91,23 +31,52 @@
             background: #fff;
         }
 
-        body{
-            font-family: "SF Display";
-            background-size: auto 100%;
-            background-image: url(./img/holiday/1.png);
+        @keyframes slideleft {
+            from {
+                background-position: 0%;
+            }
+            
+            to {
+                background-position: 90000%;
+            }
         }
 
-        #price {
+        @-webkit-keyframes slideleft {
+            from {
+                background-position: 0%;
+            }
+            to {
+                background-position: 90000%;
+            }
+        }
+
+        body{
+            font-family: "SF Display";
+            background-image: url(./img/holiday/christmas.jpg);
+            background-repeat: repeat-x;
+            animation: slideleft 5000s infinite linear;
+            -webkit-animation: slideleft 5000s infinite linear;
+            width: 100%;
+            height: auto;
+        }
+
+        #clock {
             background-color: hsla(0, 0%, 0%, .75)
         }
 
-        #price .title span {
+        .title {
             letter-spacing: -.015em;
             font-size: 80px;
             font-weight: 600;
         }
 
-        #price .subtitle span {
+        #clock .title span {
+            letter-spacing: -.015em;
+            font-size: 80px;
+            font-weight: 600;
+        }
+
+        #clock .subtitle span {
             letter-spacing: -.015em;
             font-weight: 600;
             font-size: 20px;
@@ -120,38 +89,42 @@
         @media only screen and (max-width: 1068px) {
             .title {
                 margin-bottom: 1rem !important;
-            }
-
-            #price .title span {
                 font-size: 64px;
             }
 
-            #price .subtitle span {
+            #clock .title span {
+                font-size: 64px;
+            }
+
+            #clock .subtitle span {
                 font-size: 16px;
         }
 
         @media only screen and (max-width: 735px) {
             .title {
                 margin-bottom: 0.8rem !important;
-            }
-
-            #price .title span {
                 font-size: 48px;
             }
 
-            #price .subtitle span {
+            #clock .title span {
+                font-size: 48px;
+            }
+
+            #clock .subtitle span {
                 font-size: 12.8px;
         }
     </style>
 </head>
 
 <body>
-    <section class="hero is-fullheight is-primary" id="price">
+    <section class="hero is-fullheight is-primary" id="clock">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="columns is-vcentered">
                     <div class="column">
-                        <h1 class="title"><span id="clockdiv" onclick="openButtons()"></span></h1>
+                        <h1 class="title" id="clockdiv">
+                            <span class="days"></span>:<span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
+                        </h1>
                         <h2 class="subtitle"><span>UNTIL CHRISTMAS</span></h2>
                     </div>
                 </div>
