@@ -1,4 +1,10 @@
 <!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+
+<title>~</title>
 
 <script>
   const CONFIG = {
@@ -89,13 +95,6 @@
   };
 </script>
 
-<meta charset="utf-8">
-<meta http-equiv="x-dns-prefetch-control" content="on">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-
-<title>~</title>
-
 <style type="text/css">
   :root {
     --color0: #fff;
@@ -112,7 +111,7 @@
     padding: 0;
     transition: background-color .2s;
     background-color: var(--color0);
-    font-family: "SF UI Text", sans-serif;
+    font-family: "San Francisco", "SF UI Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     color: var(--color15);
   }
 
@@ -147,7 +146,7 @@
     outline: 0;
   }
 
-  .Clock {
+  .clock {
     display: flex;
     /*    margin-top: -.06em;*/
     font-size: 6rem;
@@ -155,14 +154,12 @@
     cursor: pointer;
   }
 
-  .Colon {
+  .colon {
     margin-top: -.06em;
     opacity: 1;
-
-/*    width: 30px;*/
   }
 
-  .Colon.blink {
+  .colon.blink {
     opacity: 0.3;
     -webkit-transition: opacity 1s;
   }
@@ -368,11 +365,11 @@
 
 <div class="center">
   <!-- <time id="clock"></time> -->
-  <div class="Clock">
-    <div class="Hour"></div>
-    <div class="Colon">:</div>
-    <div class="Minute"></div>
-  </div>
+    <div class="clock">
+      <div class="hour"></div>
+      <div class="colon">:</div>
+      <div class="minute"></div>
+    </div>
 </div>
 
 <form class="overlay center" id="search-form" autocomplete="off" spellcheck="false">
@@ -430,10 +427,10 @@
     var time = new Date();
     var Hour = time.getHours() % 12 ? time.getHours() % 12 : 12;
     var Minute = time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes();
-    var Clock = document.getElementsByClassName("Clock")[0];
-    Clock.getElementsByClassName("Hour")[0].innerHTML = Hour;
-    Clock.getElementsByClassName("Colon")[0].classList.toggle("blink");
-    Clock.getElementsByClassName("Minute")[0].innerHTML = Minute;
+    var Clock = document.getElementsByClassName("clock")[0];
+    Clock.getElementsByClassName("hour")[0].innerHTML = Hour;
+    Clock.getElementsByClassName("colon")[0].classList.toggle("blink");
+    Clock.getElementsByClassName("minute")[0].innerHTML = Minute;
     setTimeout(UpdateClock, 1000);
   }
 
@@ -441,12 +438,12 @@
 
   class Clock {
     constructor(options) {
-      this._el = $.el('#clock');
+      this._el = $.el('.clock');
       this._delimiter = options.delimiter;
       this._form = options.form;
-      this._setTime = this._setTime.bind(this);
+      // this._setTime = this._setTime.bind(this);
       this._registerEvents();
-      this._start();
+      // this._start();
     }
 
     _pad(num) {
@@ -467,10 +464,10 @@
     //   this._el.innerHTML = hours + blink + minutes + blink + seconds;
     // }
 
-    _start() {
-      this._setTime();
-      setInterval(this._setTime, 1000);
-    }
+    // _start() {
+    //   this._setTime();
+    //   setInterval(this._setTime, 1000);
+    // }
   }
 
   class Help {
